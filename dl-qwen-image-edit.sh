@@ -7,7 +7,7 @@ download_file() {
     local path=$1
     local url=$2
     if [ ! -f $path ]; then
-        wget $url -O $path
+        wget $url -O $path &
     fi
 }
 
