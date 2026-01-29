@@ -10,7 +10,8 @@ echo "Starting setup for ComfyUI on CUDA 12.8 base image..."
 
 # --- 1. Update ComfyUI core source ---
 echo "Updating ComfyUI core source..."
-cd /opt/workspace-internal/ComfyUI
+cd /workspace/ComfyUI
+
 # Ensure we are on master and get latest
 git checkout master || git checkout -b master
 git pull origin master
@@ -23,8 +24,8 @@ echo "Verifying core dependencies..."
 
 # --- 3. Install/Update Custom Nodes ---
 echo "Installing custom nodes..."
-mkdir -p /opt/workspace-internal/ComfyUI/custom_nodes/
-cd /opt/workspace-internal/ComfyUI/custom_nodes/
+mkdir -p /workspace/ComfyUI/custom_nodes/
+cd /workspace/ComfyUI/custom_nodes/
 
 # Helper function to clone or update custom nodes
 clone_or_update() {
@@ -79,7 +80,7 @@ done
 
 # --- 5. Model directories and download scripts ---
 echo "Setting up model directories..."
-cd /opt/workspace-internal/ComfyUI
+cd /workspace/ComfyUI
 mkdir -p models/{unet,loras,text_encoders,vae,diffusion_models,clip,checkpoints}
 
 # If the dl-*.sh scripts were copied to the instance, make them executable
@@ -87,4 +88,4 @@ mkdir -p models/{unet,loras,text_encoders,vae,diffusion_models,clip,checkpoints}
 chmod +x dl-*.sh 2>/dev/null || true
 
 echo "Setup complete! You can now start ComfyUI using the default entrypoint or by running:"
-echo "   /venv/main/bin/python /opt/workspace-internal/ComfyUI/main.py --listen"
+echo "   /venv/main/bin/python /workspace/ComfyUI/main.py --listen"
