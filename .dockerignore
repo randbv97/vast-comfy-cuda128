@@ -1,0 +1,13 @@
+.git
+.gitignore
+Dockerfile
+build-and-push.sh
+models/
+output/
+input/
+temp/
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.vscode/
+.idea/
