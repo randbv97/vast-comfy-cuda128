@@ -31,6 +31,8 @@ RUN git clone --recursive https://github.com/chengzeyi/Comfy-WaveSpeed \
     && git clone --recursive https://github.com/ShmuelRonen/ComfyUI-FreeMemory \
     && git clone --recursive https://github.com/ssitu/ComfyUI_UltimateSDUpscale \
     && git clone --recursive https://github.com/Stability-AI/stability-ComfyUI-nodes \
+    && git clone --recursive https://github.com/filliptm/ComfyUI_Fill-Nodes.git \
+    && git clone --recursive https://github.com/filliptm/ComfyUI-LTXVideo.git \
     && git clone --recursive https://github.com/WASasquatch/was-node-suite-comfyui
 
 # For each extension, install the dependencies
